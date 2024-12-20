@@ -1,0 +1,10 @@
+# Abilita il modulo RewriteEngine
+RewriteEngine On
+
+# Regola per rimuovere la directory /pages e l'estensione .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/?$ /pages/$1.html [L]
+
+# Regola per la homepage (index)
+RewriteRule ^index/?$ /index.html [L]
