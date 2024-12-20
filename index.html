@@ -261,7 +261,8 @@
         const alertBox = document.getElementById('alert');
         alertBox.style.display = 'none';
 
-        const formData = new FormData(this);
+        const form = this;
+        const formData = new FormData(form);
 
         try {
             const response = await fetch('/services/process_form.php', { // Path corretto al file PHP
@@ -273,8 +274,9 @@
             if (response.ok && result.success) {
                 alertBox.textContent = 'Messaggio inviato con successo!';
                 alertBox.className = 'alert alert-success';
+                form.reset(); // Ripulisce tutti i campi del form
             } else {
-                alertBox.textContent = 'Impossibile inviare il messaggio. Riprova più tardi.';
+                alertBox.textContent = result.message || 'Impossibile inviare il messaggio. Riprova più tardi.';
                 alertBox.className = 'alert alert-danger';
             }
         } catch (error) {
