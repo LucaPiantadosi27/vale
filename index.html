@@ -7,6 +7,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Vale-HR</title>
+     <!-- Aggiungi il logo come favicon -->
+     <link rel="icon" type="image/png" href="/img/smallVale.png" sizes="16x16">
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -14,7 +16,12 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="/css/services.css" rel="stylesheet" />
 </head>
-
+<style>
+    body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+</style>
 <body>
     
     <!-- Responsive navbar-->
@@ -30,7 +37,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pages/vale.html">Vale</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/pages/services.html">Servizi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/pages/features.html">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="/pages/chisiamo.html">Chi Siamo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#footer">Contatti</a></li>
                 </ul>
@@ -221,7 +228,7 @@
                 <div class="card bg-light border-0">
                     <div class="card-body p-4">
                         <h4 class="fw-bold text-center">Contattaci</h4>
-                        <form id="contactForm" action="process_form.php" method="POST">
+                        <form id="contactForm" action="/services/process_form.php" method="POST">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome</label>
                                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Inserisci il tuo nome" required />
